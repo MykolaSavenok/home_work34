@@ -11,23 +11,22 @@ const App = () => {
    const handleFormSubmit = (e) => {
       e.preventDefault();
 
-      // Проверка, что amountValue - это число и больше нуля
       const parsedAmount = parseFloat(amountValue);
+      
       if (!isNaN(parsedAmount) && parsedAmount > 0) {
-         // Если условие выполняется, то добавляем продукт
          dispatch({
             type: "ADD_PRODUCT",
             payload: {
                id: Date.now(),
                caption: captionValue,
-               amount: parsedAmount, // Используем парсированное значение
+               amount: parsedAmount, 
             },
          });
 
          setCaptionValue('');
          setAmountValue('');
       } else {
-         // Выводите сообщение об ошибке, например, что amountValue не является допустимым числом
+         
          alert('Please enter a valid positive number for amount.');
       }
    };

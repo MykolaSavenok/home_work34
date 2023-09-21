@@ -6,7 +6,7 @@ const saveStateToLocalStorage = (state) => {
       const serializedState = JSON.stringify(state);
       localStorage.setItem('reduxState', serializedState);
    } catch (error) {
-      // Обработка ошибок сохранения в localStorage
+
       console.error('Ошибка при сохранении состояния в localStorage:', error);
    }
 };
@@ -19,7 +19,7 @@ const loadStateFromLocalStorage = () => {
       }
       return JSON.parse(serializedState);
    } catch (error) {
-      // Обработка ошибок загрузки из localStorage
+
       console.error('Ошибка при загрузке состояния из localStorage:', error);
       return undefined;
    }
